@@ -2,9 +2,10 @@
 @import "./styles/mixins/parallax";
 @import "./styles/mixins/scrollbar";
 
-@import url(//db.onlinewebfonts.com/c/e76b107754ce11ff3ba24dd52e357e5b?family=Bell);
-
-@include parallax-init();
+@font-face {
+  font-family: "Bell";
+  src: url("./lib/assets/fonts/Bell.ttf") format("truetype");
+}
 
 * {
   @include hide-scrollbar();
