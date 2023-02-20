@@ -1,0 +1,147 @@
+<script lang="ts">
+  import { goto } from '$app/navigation';
+</script>
+
+<main class="layout-grid">
+  <div class="exit"><span class="span-text" on:click={() => goto('/')}>Exit</span></div>
+  <div class="centre">
+    <section class="telephone">
+      <p>
+        <span class="span-text" itemprop="telephone"
+          ><a href="tel:+44-07771950930">+44 07771 950 930</a></span
+        >
+      </p>
+    </section>
+    <section class="email">
+      <p>
+        <span class="span-text"
+          ><a href="mailto:looby@loobycrean.co.uk">looby@loobycrean.co.uk</a></span
+        >
+      </p>
+    </section>
+    <section class="address">
+      <p class="para-text">
+        <span>Latimer House</span>
+        <br />
+        <span>Church Street</span>
+        <br />
+        <span>London, W4 2PH</span>
+      </p>
+    </section>
+  </div>
+</main>
+
+<style lang="scss">
+  @use 'sass:math';
+  @use 'sass:color';
+  @import '../../styles/colors';
+  @import '../../styles/vars';
+
+  @mixin flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+  }
+  @mixin filling() {
+    width: 100%;
+    height: 100;
+  }
+  @mixin viewport() {
+    min-width: 100vw;
+    min-height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+  @mixin keyframe($animation_name) {
+    @keyframes #{$animation_name} {
+      @content;
+    }
+  }
+
+  @mixin animation($delay, $duration, $animation, $direction: forward, $fillmode: fowards) {
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-fill-mode: $fillmode;
+    animation-direction: $direction;
+  }
+
+  .layout-grid {
+    background-color: grey;
+    @include filling();
+    @include viewport();
+    overflow-y: hidden;
+
+    /* cursor: none !important; */
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+    z-index: 0;
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 40px;
+    grid-template-rows: 40px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 40px;
+    gap: 0px 0px;
+    grid-template-areas:
+      '. . . . . . . . . . . .'
+      '. . . . . . . . . . exit .'
+      '. . . . . . . . . . . .'
+      '. . . . . . . . . . . .'
+      '. . . centre centre centre centre centre centre . . .'
+      '. . . centre centre centre centre centre centre . . .'
+      '. . . centre centre centre centre centre centre . . .'
+      '. . . centre centre centre centre centre centre . . .'
+      '. . . . . . . . . . . .'
+      '. . . . . . . . . . . .'
+      '. contact contact contact . . . . projects projects projects .'
+      '. . . . . . . . . . . .';
+
+    .fill-grid {
+      grid-area: 1 / 1 / 13 / 13;
+    }
+  }
+
+  .centre {
+    grid-area: centre;
+    @include flex(column);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(228, 227, 227);
+  }
+  .exit {
+    grid-area: exit;
+    @include flex(column);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(228, 227, 227);
+  }
+
+  .telephone,
+  .email {
+    &:hover {
+      cursor: pointer;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .span-text {
+    border-bottom: 2px solid adjust-color($color: $primary-light, $alpha: -0.9);
+    transition: border-bottom 0.4s ease-in;
+    &:hover {
+      border-bottom: 2px solid $primary-light;
+    }
+  }
+
+  .para-text {
+    span {
+      border-bottom: 2px solid adjust-color($color: $primary-light, $alpha: -0.9);
+      transition: border-bottom 0.4s ease-in;
+    }
+    &:hover {
+      span {
+        border-bottom: 2px solid $primary-light;
+      }
+    }
+  }
+</style>

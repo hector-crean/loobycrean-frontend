@@ -1,0 +1,9 @@
+::-moz-selection { /* Code for Firefox */
+    color: var(--bg-theme-color-1);
+    background: var(--text-theme-color-1);
+  }
+  
+  ::selection {
+    color: var(--bg-theme-color-1);
+    background: var(--text-theme-color-1);
+  }

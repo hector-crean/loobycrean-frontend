@@ -1,0 +1,24 @@
+
+
+
+article {
+   
+    display: grid;
+    grid-template-columns:
+      1fr
+      min(65ch, 100%)
+      1fr;
+
+
+  
+
+    & > * {
+
+      grid-column: 2;
+
+      &[data-fullbleed="true"] {
+        width: 100%;
+        grid-column: 1 / -1;
+      }
+    }
+  }
