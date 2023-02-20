@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { fade } from 'svelte/transition';
   import '../app.scss';
   import type { LayoutData } from './$types';
 
@@ -6,7 +7,7 @@
 </script>
 
 {#key data.pathname}
-  <div>
+  <div transition:fade>
     <slot />
   </div>
 {/key}

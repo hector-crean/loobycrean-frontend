@@ -1,25 +1,26 @@
 <script lang="ts">
+  import { fade } from 'svelte/transition';
 </script>
 
 <main class="layout-grid">
   <div class="exit"><a class="span-text" href="/">Exit</a></div>
   <div class="centre">
     <section class="telephone">
-      <p>
+      <p transition:fade={{ delay: 400 }}>
         <span class="span-text" itemprop="telephone"
           ><a href="tel:+44-07771950930">+44 07771 950 930</a></span
         >
       </p>
     </section>
     <section class="email">
-      <p>
+      <p transition:fade={{ delay: 500 }}>
         <span class="span-text"
           ><a href="mailto:looby@loobycrean.co.uk">looby@loobycrean.co.uk</a></span
         >
       </p>
     </section>
     <section class="address">
-      <p class="para-text">
+      <p transition:fade={{ delay: 600 }} class="para-text">
         <span>Latimer House</span>
         <br />
         <span>Church Street</span>
@@ -35,6 +36,7 @@
   @use 'sass:color';
   @import '../../styles/colors';
   @import '../../styles/vars';
+  @import '../../styles/breakpoints';
 
   @mixin flex($direction) {
     display: flex;
@@ -79,16 +81,16 @@
     gap: 0px 0px;
     grid-template-areas:
       '. . . . . . . . . . . .'
-      '. . . . . . . . . . exit .'
-      '. . . . . . . . . . . .'
-      '. . . . . . . . . . . .'
+      '. . . centre centre centre centre centre centre . exit .'
       '. . . centre centre centre centre centre centre . . .'
       '. . . centre centre centre centre centre centre . . .'
       '. . . centre centre centre centre centre centre . . .'
       '. . . centre centre centre centre centre centre . . .'
-      '. . . . . . . . . . . .'
-      '. . . . . . . . . . . .'
-      '. contact contact contact . . . . projects projects projects .'
+      '. . . centre centre centre centre centre centre . . .'
+      '. . . centre centre centre centre centre centre . . .'
+      '. . . centre centre centre centre centre centre . . .'
+      '. . . centre centre centre centre centre centre . . .'
+      '. . . centre centre centre centre centre centre . . .'
       '. . . . . . . . . . . .';
 
     .fill-grid {
@@ -97,6 +99,7 @@
   }
 
   .centre {
+    overflow: visible;
     grid-area: centre;
     @include flex(column);
     align-items: center;
@@ -111,6 +114,7 @@
     justify-content: center;
     text-align: center;
     color: rgb(228, 227, 227);
+    overflow: visible;
   }
 
   .telephone,
@@ -118,6 +122,12 @@
   .address {
     font-size: $space-l;
     line-height: $space-xl;
+
+    @include respond-below(sm) {
+      font-size: $space-m;
+      line-height: $space-l;
+    }
+
     a {
       text-decoration: none;
       color: inherit;

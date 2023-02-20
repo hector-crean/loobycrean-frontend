@@ -1,6 +1,7 @@
 <script lang="ts">
-  import theGuardship from '$lib/assets/images/looby/The Guardship 17.jpg';
+  import theGuardship from '$lib/assets/images/looby/guardship-low-res.jpg';
   import { spring } from 'svelte/motion';
+  import { fade } from 'svelte/transition';
 
   const titleOffset = spring(0, { stiffness: 0.9, damping: 0.7 });
 </script>
@@ -9,7 +10,7 @@
 
 <div class="landing-page-grid">
   <div class="fill-grid">
-    <img src={theGuardship} />
+    <img src={theGuardship} transition:fade={{ delay: 200 }} class="animation-fade-in" />
   </div>
   <div class="centre" style:transform="translateX({600 * $titleOffset}%)">
     <span class="main-title">Looby Crean Ltd</span>
@@ -90,6 +91,8 @@
 
   .centre {
     grid-area: centre;
+    overflow: visible;
+
     @include flex(column);
     align-items: center;
     justify-content: center;
@@ -97,6 +100,7 @@
     color: rgb(228, 227, 227);
   }
   .contact {
+    overflow: visible;
     grid-area: contact;
     @include flex(column);
     align-items: center;

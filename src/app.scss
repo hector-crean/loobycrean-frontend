@@ -1,6 +1,6 @@
 @import "./styles/index.scss";
-@import "./styles/mixins/parallax";
 @import "./styles/mixins/scrollbar";
+@import "./styles/vars.scss";
 
 @font-face {
   font-family: "Bell";
@@ -30,6 +30,7 @@
 html,
 body,
 #app {
+  background-color: $primary-light;
   padding: 0;
   margin: 0;
   width: 100%;
