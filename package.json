@@ -29,7 +29,6 @@
   "devDependencies": {
     "@dimforge/rapier3d-compat": "^0.10.0",
     "@gltf-transform/functions": "^2.5.1",
-    "@squoosh/lib": "^0.5.3",
     "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
     "@theatre/core": "^0.5.1",
