@@ -12,9 +12,6 @@
     "tauri": "tauri"
   },
   "dependencies": {
-    "@random/postresqldb": "workspace:*",
-    "@random/svelte-lexical": "workspace:*",
-    "@random/three-camera-controls": "workspace:*",
     "@trpc/client": "^10.9.0",
     "@trpc/server": "^10.9.0",
     "camera-controls": "^1.37.5",
