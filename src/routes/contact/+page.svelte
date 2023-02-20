@@ -6,21 +6,21 @@
   <div class="exit"><a class="span-text" href="/">Exit</a></div>
   <div class="centre">
     <section class="telephone">
-      <p transition:fade={{ delay: 400 }}>
+      <p in:fade={{ delay: 500, duration: 500 }} out:fade={{ duration: 500 }}>
         <span class="span-text" itemprop="telephone"
           ><a href="tel:+44-07771950930">+44 07771 950 930</a></span
         >
       </p>
     </section>
     <section class="email">
-      <p transition:fade={{ delay: 500 }}>
+      <p in:fade={{ delay: 800, duration: 500 }} out:fade={{ duration: 500 }}>
         <span class="span-text"
           ><a href="mailto:looby@loobycrean.co.uk">looby@loobycrean.co.uk</a></span
         >
       </p>
     </section>
     <section class="address">
-      <p transition:fade={{ delay: 600 }} class="para-text">
+      <p in:fade={{ delay: 900, duration: 500 }} out:fade={{ duration: 500 }}>
         <span>Latimer House</span>
         <br />
         <span>Church Street</span>

@@ -7,7 +7,7 @@
 </script>
 
 {#key data.pathname}
-  <div transition:fade>
+  <div transition:fade={{ duration: 500 }}>
     <slot />
   </div>
 {/key}
