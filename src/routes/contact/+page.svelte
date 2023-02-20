@@ -65,7 +65,7 @@
   }
 
   .layout-grid {
-    background-color: grey;
+    background-color: $primary-light;
     @include filling();
     @include viewport();
     overflow-y: hidden;
@@ -114,13 +114,19 @@
   }
 
   .telephone,
-  .email {
-    &:hover {
-      cursor: pointer;
-    }
+  .email,
+  .address {
+    font-size: $space-l;
+    line-height: $space-xl;
     a {
       text-decoration: none;
       color: inherit;
+    }
+  }
+  .telephone,
+  .email {
+    &:hover {
+      cursor: pointer;
     }
   }
 

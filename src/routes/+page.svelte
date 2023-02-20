@@ -12,11 +12,11 @@
     <img src={theGuardship} />
   </div>
   <div class="centre" style:transform="translateX({600 * $titleOffset}%)">
-    <h1>Looby Crean Ltd</h1>
+    <span class="main-title">Looby Crean Ltd</span>
   </div>
-  <div class="about" style:transform="translateX({600 * $titleOffset}%)">
+  <!-- <div class="about" style:transform="translateX({600 * $titleOffset}%)">
     <a class="links" href="/about">About</a>
-  </div>
+  </div> -->
   <div class="contact" style:transform="translateX({600 * $titleOffset}%)">
     <a class="links" href="/contact">Contact</a>
   </div>
@@ -61,14 +61,14 @@
       '. . . . . . . . . . . .'
       '. . . . . . . . . . . .'
       '. . . . . . . . . . . .'
-      '. . . . . . . . . . . .'
       '. . . centre centre centre centre centre centre . . .'
       '. . . centre centre centre centre centre centre . . .'
       '. . . centre centre centre centre centre centre . . .'
       '. . . centre centre centre centre centre centre . . .'
       '. . . . . . . . . . . .'
       '. . . . . . . . . . . .'
-      '. contact contact contact . . . . about about about .'
+      '. . . . . . . . . . . .'
+      '. . . . . contact contact . . . . .'
       '. . . . . . . . . . . .';
   }
   .fill-grid {
@@ -80,6 +80,12 @@
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  .main-title {
+    font-size: $space-2xl;
+    line-height: calc(1.2 * $space-2xl);
+    color: white;
   }
 
   .centre {
@@ -109,7 +115,9 @@
   }
 
   .links {
-    font-size: $space-m;
+    color: $primary-light;
+    font-size: $space-xl;
+    line-height: calc(1.2 * $space-xl);
     border-bottom: 2px solid adjust-color($color: $primary-light, $alpha: -0.9);
     transition: border-bottom 0.4s ease-in;
 
