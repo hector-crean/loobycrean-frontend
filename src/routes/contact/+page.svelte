@@ -1,9 +1,8 @@
 <script lang="ts">
-  import { goto } from '$app/navigation';
 </script>
 
 <main class="layout-grid">
-  <div class="exit"><span class="span-text" on:click={() => goto('/')}>Exit</span></div>
+  <div class="exit"><a class="span-text" href="/">Exit</a></div>
   <div class="centre">
     <section class="telephone">
       <p>

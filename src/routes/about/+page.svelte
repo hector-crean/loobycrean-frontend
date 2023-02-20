@@ -7,10 +7,10 @@
   <div class="exit"><span class="span-text" on:click={() => goto('/')}>Exit</span></div>
   <div class="content-area">
     <figure>
-      <img src={loobyAtDoorPngPath} />
+      <img src={loobyAtDoorPngPath} class="face-in" />
       <figcaption>Looby at home</figcaption>
     </figure>
-    <p class="fade-in-text">
+    <!-- <p class="fade-in-text">
       Thirteen years trading Crude oil and Derivatives, plus bringing up three small boys is, I
       discovered, extremely useful experience for the running an interior design company - plus the
       year I spent at the Inchbald learning directly about the trade itself. We are a business of
@@ -48,7 +48,7 @@
       present total final costing prior to execution of this stage of the project which does not
       overlap with General/sub contractors or Architect; Execute scheme to finish and provide
       constant detailed statement of accounts.
-    </p>
+    </p> -->
   </div>
 </main>
 
@@ -82,7 +82,7 @@
     }
   }
 
-  .fade-in-text {
+  .fade-in {
     animation: fade-in 2s;
   }
 
@@ -121,6 +121,7 @@
       @include flex(column);
 
       align-items: center;
+      justify-content: center;
 
       font-size: $space-m;
       line-height: $space-l;
@@ -143,9 +144,6 @@
     }
 
     img {
-      /* transform: translateX(50%); */
-      opacity: 1;
-      transition: opacity 0.2s;
       width: 100%;
       height: 100%;
       object-fit: contain;

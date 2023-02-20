@@ -33,12 +33,20 @@ body,
   margin: 0;
   width: 100%;
   height: 100%;
-  @include parallax-init;
+  overflow: hidden;
 }
 
 figure {
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 * {

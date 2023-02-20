@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { goto } from '$app/navigation';
-
   import theGuardship from '$lib/assets/images/looby/The Guardship 17.jpg';
   import { spring } from 'svelte/motion';
 
@@ -17,10 +15,10 @@
     <h1>Looby Crean Ltd</h1>
   </div>
   <div class="about" style:transform="translateX({600 * $titleOffset}%)">
-    <span class="links" on:click={() => goto('/about')}>About</span>
+    <a class="links" href="/about">About</a>
   </div>
   <div class="contact" style:transform="translateX({600 * $titleOffset}%)">
-    <span class="links" on:click={() => goto('/contact')}>Contact</span>
+    <a class="links" href="/contact">Contact</a>
   </div>
 </div>
 
@@ -72,9 +70,15 @@
       '. . . . . . . . . . . .'
       '. contact contact contact . . . . about about about .'
       '. . . . . . . . . . . .';
+  }
+  .fill-grid {
+    overflow: hidden;
+    grid-area: 1 / 1 / 13 / 13;
 
-    .fill-grid {
-      grid-area: 1 / 1 / 13 / 13;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -102,12 +106,6 @@
     justify-content: center;
     text-align: center;
     color: rgb(228, 227, 227);
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 
   .links {
