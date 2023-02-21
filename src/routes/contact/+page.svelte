@@ -1,23 +1,23 @@
 <script lang="ts">
-  import { fade } from 'svelte/transition';
+  import { fade, fly } from 'svelte/transition';
 </script>
 
 <main class="layout-grid">
   <div class="exit"><a class="span-text" href="/">Exit</a></div>
-  <div class="centre">
+  <div class="centre" in:fly={{ delay: 500, duration: 2000, y: 200 }}>
     <section class="telephone">
-      <p in:fade={{ delay: 500, duration: 500 }} out:fade={{ duration: 500 }}>
-        <span class="span-text" itemprop="telephone"
-          ><a href="tel:+44-07771950930">+44 07771 950 930</a></span
-        >
-      </p>
+      <a
+        href="tel:+44-07771950930"
+        in:fade={{ delay: 500, duration: 500 }}
+        out:fade={{ duration: 500 }}>+44 07771 950 930</a
+      >
     </section>
     <section class="email">
-      <p in:fade={{ delay: 800, duration: 500 }} out:fade={{ duration: 500 }}>
-        <span class="span-text"
-          ><a href="mailto:looby@loobycrean.co.uk">looby@loobycrean.co.uk</a></span
-        >
-      </p>
+      <a
+        href="mailto:looby@loobycrean.co.uk"
+        in:fade={{ delay: 800, duration: 500 }}
+        out:fade={{ duration: 500 }}>looby@loobycrean.co.uk</a
+      >
     </section>
     <section class="address">
       <p in:fade={{ delay: 900, duration: 500 }} out:fade={{ duration: 500 }}>
@@ -127,11 +127,6 @@
       font-size: $space-m;
       line-height: $space-l;
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
   }
   .telephone,
   .email {
@@ -140,23 +135,11 @@
     }
   }
 
-  .span-text {
-    border-bottom: 2px solid adjust-color($color: $primary-light, $alpha: -0.9);
+  a {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.084);
     transition: border-bottom 0.4s ease-in;
     &:hover {
-      border-bottom: 2px solid $primary-light;
-    }
-  }
-
-  .para-text {
-    span {
-      border-bottom: 2px solid adjust-color($color: $primary-light, $alpha: -0.9);
-      transition: border-bottom 0.4s ease-in;
-    }
-    &:hover {
-      span {
-        border-bottom: 2px solid $primary-light;
-      }
+      border-bottom: 2px solid adjust-color($color: rgba(255, 255, 255, 0.084), $alpha: 0.9);
     }
   }
 </style>

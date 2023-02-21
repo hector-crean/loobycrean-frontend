@@ -1,8 +1,6 @@
 <script lang="ts">
   import theGuardship from '$lib/assets/images/looby/guardship-low-res.jpg';
-  import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
   import { spring } from 'svelte/motion';
-  import { fade } from 'svelte/transition';
 
   const titleOffset = spring(0, { stiffness: 0.9, damping: 0.7 });
 </script>
@@ -11,11 +9,7 @@
 
 <div class="landing-page-grid">
   <div class="fill-grid">
-    <IntersectionObserver let:isIntersecting>
-      {#if isIntersecting}
-        <img src={theGuardship} in:fade={{ delay: 600, duration: 2000 }} out:fade />
-      {/if}
-    </IntersectionObserver>
+    <img src={theGuardship} />
   </div>
   <div class="centre" style:transform="translateX({600 * $titleOffset}%)">
     <span class="main-title">Looby Crean Ltd</span>
