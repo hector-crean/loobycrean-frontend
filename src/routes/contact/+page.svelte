@@ -1,26 +1,18 @@
 <script lang="ts">
-  import { fade, fly } from 'svelte/transition';
+  import { fly } from 'svelte/transition';
 </script>
 
 <main class="layout-grid">
   <div class="exit"><a class="span-text" href="/">Exit</a></div>
   <div class="centre" in:fly={{ delay: 500, duration: 2000, y: 200 }}>
     <section class="telephone">
-      <a
-        href="tel:+44-07771950930"
-        in:fade={{ delay: 500, duration: 500 }}
-        out:fade={{ duration: 500 }}>+44 07771 950 930</a
-      >
+      <a href="tel:+44-07771950930">+44 07771 950 930</a>
     </section>
     <section class="email">
-      <a
-        href="mailto:looby@loobycrean.co.uk"
-        in:fade={{ delay: 800, duration: 500 }}
-        out:fade={{ duration: 500 }}>looby@loobycrean.co.uk</a
-      >
+      <a href="mailto:looby@loobycrean.co.uk">looby@loobycrean.co.uk</a>
     </section>
     <section class="address">
-      <p in:fade={{ delay: 900, duration: 500 }} out:fade={{ duration: 500 }}>
+      <p>
         <span>Latimer House</span>
         <br />
         <span>Church Street</span>

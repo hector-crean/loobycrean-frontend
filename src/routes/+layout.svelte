@@ -6,6 +6,11 @@
   export let data: LayoutData;
 </script>
 
+<svelte:head>
+  <title>Looby Crean LTD</title>
+  <meta name="description" content="Put your description here." /></svelte:head
+>
+
 {#key data.pathname}
   <div in:fade={{ delay: 500, duration: 500 }} out:fade={{ delay: 0, duration: 500 }}>
     <slot />

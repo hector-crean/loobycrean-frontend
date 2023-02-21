@@ -1,6 +1,8 @@
 <script lang="ts">
   import theGuardship from '$lib/assets/images/looby/guardship-low-res.jpg';
+  import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
   import { spring } from 'svelte/motion';
+  import { fade } from 'svelte/transition';
 
   const titleOffset = spring(0, { stiffness: 0.9, damping: 0.7 });
 </script>
@@ -8,16 +10,21 @@
 <!-- <Cursor kind={$cursorKind} /> -->
 
 <div class="landing-page-grid">
-  <div class="fill-grid">
-    <img src={theGuardship} />
+  <div class="full-grid">
+    <IntersectionObserver let:isIntersecting>
+      {#if isIntersecting}
+        <img src={theGuardship} in:fade={{ duration: 2000 }} />
+      {/if}
+    </IntersectionObserver>
   </div>
-  <div class="centre" style:transform="translateX({600 * $titleOffset}%)">
-    <span class="main-title">Looby Crean Ltd</span>
+  <div class="centre">
+    <IntersectionObserver let:isIntersecting>
+      {#if isIntersecting}
+        <span class="main-title" in:fade={{ delay: 400, duration: 1400 }}>Looby Crean Ltd</span>
+      {/if}
+    </IntersectionObserver>
   </div>
-  <!-- <div class="about" style:transform="translateX({600 * $titleOffset}%)">
-    <a class="links" href="/about">About</a>
-  </div> -->
-  <div class="contact" style:transform="translateX({600 * $titleOffset}%)">
+  <div class="contact">
     <a class="links" href="/contact">Contact</a>
   </div>
 </div>
@@ -45,6 +52,7 @@
   }
 
   .landing-page-grid {
+    z-index: 10;
     @include filling();
     @include viewport();
     overflow-y: hidden;
@@ -61,7 +69,7 @@
       '. . . . . . . . . . . .'
       '. . . . . . . . . . . .'
       '. . . . . . . . . . . .'
-      '. . . centre centre centre centre centre centre . . .'
+      '. . . . . . . . . . . .'
       '. . . centre centre centre centre centre centre . . .'
       '. . . centre centre centre centre centre centre . . .'
       '. . . centre centre centre centre centre centre . . .'
@@ -71,9 +79,11 @@
       '. . . . . contact contact . . . . .'
       '. . . . . . . . . . . .';
   }
-  .fill-grid {
+
+  .full-grid {
     overflow: hidden;
     grid-area: 1 / 1 / 13 / 13;
+    z-index: 1;
 
     img {
       width: 100%;
@@ -83,32 +93,29 @@
   }
 
   .main-title {
+    z-index: 10;
     font-size: $space-2xl;
     line-height: calc(1.2 * $space-2xl);
     color: white;
   }
 
   .centre {
+    z-index: 10;
     grid-area: centre;
     overflow: visible;
-
-    @include flex(column);
-    align-items: center;
-    justify-content: center;
     text-align: center;
     color: rgb(228, 227, 227);
   }
   .contact {
+    z-index: 10;
     overflow: visible;
     grid-area: contact;
-    @include flex(column);
-    align-items: center;
-    justify-content: center;
     text-align: center;
     color: rgb(228, 227, 227);
   }
 
   .about {
+    z-index: 10;
     grid-area: about;
     @include flex(column);
     align-items: center;
