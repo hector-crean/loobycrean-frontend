@@ -7,8 +7,8 @@
 </script>
 
 <svelte:head>
-  <title>Looby Crean LTD</title>
-  <meta name="description" content="Put your description here." /></svelte:head
+  <title>Looby Crean Ltd</title>
+  <meta name="description" content="Looby Crean Interior Design" /></svelte:head
 >
 
 {#key data.pathname}
